@@ -8,7 +8,7 @@ N = 2 ** 11
 omega = 2 * np.pi
 
 
-t = utils.get_t(N)
+t = utils.get_t(N, dt)
 
 x = my_functions.cosine(t)
 

@@ -17,7 +17,7 @@ def get_vars(x, N, dt):
     return u, f, x2
 
 
-def get_t(N):
+def get_t(N, dt):
     if N % 2 == 0:
         t = np.arange(-N / 2, N / 2, 1) * dt
     else:
