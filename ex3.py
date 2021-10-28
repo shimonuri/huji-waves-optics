@@ -1,20 +1,19 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import my_functions
+import utils
 
 dt = 0.003
 N = 2 ** 11
+omega = 2 * np.pi
 
 
-if N % 2 == 0:
-    t = np.arange(-N / 2, N / 2, 1) * dt
-else:
-    t = np.arange(-(N - 1) / 2, N / 2, 1) * dt
+t = utils.get_t(N)
 
 x = my_functions.cosine(t)
 
 
-u, f, x2 = my_functions.get_vars(x, N, dt)
+u, f, x2 = utils.get_vars(x, N, dt)
 
 fig, ax = plt.subplots(1, 2)
 ax[0].plot(f, np.abs(u), label="Absolute Value", linestyle="solid", linewidth=2)
