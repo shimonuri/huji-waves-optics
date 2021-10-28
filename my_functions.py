@@ -13,8 +13,8 @@ def rect(t, width=3):
     return np.abs(t) < width / 2
 
 
-def cosine(t, freq=1):
-    return np.sin(2 * np.pi * freq * t)
+def cosine(t, freq=1, power=1):
+    return np.power(np.cos(2 * np.pi * freq * t), power)
 
 
 def modulated_gaussian(t, freq=5):

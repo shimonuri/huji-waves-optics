@@ -5,14 +5,12 @@ import utils
 
 dt = 0.003
 N = 2 ** 11
-omega = 2 * np.pi
+omega = 2
 
 
 t = utils.get_t(N, dt)
-
-x = my_functions.cosine(t)
-
-
+# x = my_functions.cosine(t=t, freq=omega, power=3)
+x = 3/2 * my_functions.cosine(t=t, freq=omega, power=1) - my_functions.cosine(t=t, freq=omega, power=3)
 u, f, x2 = utils.get_vars(x, N, dt)
 
 fig, ax = plt.subplots(1, 2)
@@ -30,7 +28,7 @@ ax[1].plot(t, x, label="Original", linewidth=2)
 ax[1].plot(
     t, np.real(x2), label="Inverse", linestyle="dotted", linewidth=3, color="black"
 )
-ax[1].set_xlim(-5, 5)
+ax[1].set_xlim(-3.5, 3.5)
 ax[1].legend()
 ax[1].grid()
 ax[1].set_title("Temporal space")
